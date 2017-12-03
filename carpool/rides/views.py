@@ -15,9 +15,9 @@ def index(request):
 
 
 
-@login_required
+# @login_required
 @transaction.atomic
-def update_profile(request):
+def update_profile(request,username):
     user = User.objects.get(username=username)
     if request.method == 'POST':
         user_form = UserForm(request.POST, instance=request.user)
@@ -37,14 +37,14 @@ def update_profile(request):
         'profile_form': profile_form
     })
 
-@login_required(login_url='/accounts/login')
-def profile(request, username):
-    try:
-        user = User.objects.get(username=username)
-
-        profile = Profile.objects.filter(user_id=user).all()
-
-    except Profile.DoesNotExist:
-        raise Http404()
+# @login_required(login_url='/accounts/login')
+def profile(request):
+    # try:
+    #     user = User.objects.get(username=username)
+    #
+    #     profile = Profile.objects.filter(user_id=user).all()
+    #
+    # except Profile.DoesNotExist:
+    #     raise Http404()
 
     return render(request,'all-rides/user_profile.html')

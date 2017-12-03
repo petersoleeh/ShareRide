@@ -2,7 +2,13 @@
 
 {% block content %}
 {{block.super}}
-<div class="container">
+<header>
   <h1>ShareRide</h1>
-</div>
+  <p>Service Lets Riders Share (Yes, Share) a Cab</p> <br>
+  <ul>
+    <a href="/accounts/login"><li><button type="button" name="button" class="btn btn-primary">Driver</button></li></a>            |
+    <a href="/accounts/login"><li><button href="/accounts/login" type="button" name="button" class="btn btn-primary">Passenger</button></li></a>
+  </ul>
+</header>
+
 {%endblock%}
