@@ -1,6 +1,6 @@
 .navbar-inverse{
   background-color: #2396f3 !important;
-  color:inherit;
+  color: transparent;
   border: none;
   font-size: 18px;
 }
@@ -8,7 +8,7 @@
 body{
 
   padding: 80px;
-  color:#000 ;
+  color:#fff ;
   margin: 0;
   background-color:#ecf0f5 ;
   line-height: 20px;
@@ -16,9 +16,42 @@ body{
   overflow-x: hidden;
   overflow-y: auto;
 }
-html body{
-  min-height: 100%;
+body {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),url('/static/images/b2.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Source Sans Pro', sans-serif;
+
+
+
 }
 #logo{
   margin-left: 150px;
+}
+img {
+    border-radius: 50%;
+}
+header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+h1 {
+  /*text-transform: uppercase;*/
+  margin: 0;
+  font-size: 8rem;
+  white-space: nowrap;
+}
+p {
+  margin: 0;
+  font-size: 2.5rem;
+}
+ul li{
+  display: inline;
 }
