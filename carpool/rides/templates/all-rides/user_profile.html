@@ -1,14 +1,22 @@
 {%extends 'all-rides/base.html'%}
-
+{%load static%}
 {% block content %}
 {{block.super}}
 
   <h1>User profile {{user.username}}</h1>
-  <form method="post">
-  {% csrf_token %}
-  {{ user_form.as_p }}
-  {{ profile_form.as_p }}
-  <button type="submit">Save changes</button>
-</form>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{%static 'images/logo1.png'%}" alt="" class="img-circle" width="80">
+        <h2>Name {{user.username}}</h2>
+        <h5>Driver</h5>
+      </div>
+      <div class="col-md-6">
+        <h4>Car: Raum</h4>
+        <h4>Model: Toyota</h4>
+        <h4>Seats: 5</h4>
+      </div>
+    </div>
+  </div>
 
 {%endblock%}
