@@ -3,20 +3,23 @@
 {% block content %}
 {{block.super}}
 
-  <h1>User profile {{user.username}}</h1>
-  <div class="container">
+  <h1 class="text-center">ShareRide</h1> <br>
+  <div class="container" id="vehicle">
     <div class="row">
       <div class="col-md-6">
-        <img src="{%static 'images/logo1.png'%}" alt="" class="img-circle" width="80">
-        <h2>Name {{user.username}}</h2>
+        <img src="{%static 'images/lex1.png'%}" alt="" class="img-circle" width="100">
+        <h2>Peter Maina</h2>
         <h5>Driver</h5>
       </div>
       <div class="col-md-6">
-        <h4>Car: Raum</h4>
+        <h4>Car: Lexus</h4>
         <h4>Model: Toyota</h4>
         <h4>Seats: 5</h4>
+        <h4>REG: SSD 188 F</h4>
       </div>
     </div>
+  </div> <br>
+  <div class="container">
+  <button type="button" class="btn btn-primary"name="button">Add vehicle</button>
   </div>
-
 {%endblock%}
