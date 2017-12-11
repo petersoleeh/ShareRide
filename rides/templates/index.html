@@ -1,0 +1,14 @@
+{%extends 'all-rides/base.html'%}
+
+{% block content %}
+{{block.super}}
+<header id="headerindex">
+  <h1>ShareRide</h1>
+  <p>Service Lets Riders Share (Yes, Share) a Cab</p> <br>
+  <ul>
+    <a href="/accounts/profile"><li><button type="button" name="button" class="btn btn-primary">Driver</button></li></a>            |
+    <a href="/rider"><li><button type="button" name="button" class="btn btn-primary">Passenger</button></li></a>
+  </ul>
+</header>
+
+{%endblock%}

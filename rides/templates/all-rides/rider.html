@@ -1,0 +1,44 @@
+{%extends 'all-rides/base.html'%}
+{%load static%}
+{% block content %}
+{{block.super}}
+
+
+<h1 class="text-center">RIDER</h1> <br>
+{%for ride in rides%}
+<div class="container" id="vehicle">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <img src="{%static 'images/avat.png'%}" alt="" class="img-circle" width="100">
+      <h2>{{ride.rider}}</h2>
+      <h5>Rider</h5>
+    </div>
+    <div class="col-md-6">
+      <h4 id="home">Source: {{ride.source}}</h4>
+      <h4 id="away">Destn: {{ride.dest}}</h4>
+      <!-- <h4>phone number: {{ride.phone_number}}</h4> -->
+      <!-- <h4>Depart time: {{ride.ride_date}}</h4> -->
+      {%if user.is_authenticated%}
+      <form action="/" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{form}}
+          <input type="submit" value="Submit" class="btn btn-primary"  name="search">
+        </form>
+        <br>
+        {%else%}
+        <h5>Login to Set Place to travel</h5>
+        {%endif%}
+    </div>
+  </div>
+</div> <br>
+{%endfor%}
+<div class="container">
+<button type="button" class="btn btn-primary"name="button">Update Profile</button>
+<a href="/accounts/profile"><button type="button" class="btn btn-primary"name="button">Find Drivers</button></a>
+</div> <br>
+<div class="container">
+  <div id="map">
+
+  </div>
+</div>
+{%endblock%}

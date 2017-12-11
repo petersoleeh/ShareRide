@@ -27,7 +27,12 @@
   {%block content%}{%endblock%}
 
   {%block script%}
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYhT-2wPJB1I0sCAKU1a2mUm14Z70Z41Y&libraries=places&callback=activatePlaceSearch"></script>
+    <script async defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCYhT-2wPJB1I0sCAKU1a2mUm14Z70Z41Y&callback=initMap"></script>
+    <script type="text/javascript" src="{% static 'js/map.js' %}"></script>
+
 
     {%bootstrap_javascript%}
   {%endblock%}

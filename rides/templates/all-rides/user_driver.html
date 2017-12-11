@@ -1,0 +1,32 @@
+{%extends 'all-rides/base.html'%}
+{%load static%}
+{%load bootstrap3%}
+{% block content %}
+{{block.super}}
+
+  <h1 class="text-center">DRIVER</h1> <br>
+  {%if user.is_authenticated%}
+    {%for car in driver %}
+  <div class="container" id="vehicle">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{%static 'images/lex1.png'%}" alt="" class="img-circle" width="100">
+        <h2>{{car.driver}}</h2>
+        <h5>Driver</h5>
+      </div>
+      <div class="col-md-6">
+        <h4>Car: {{car.car_make}}</h4>
+        <h4>Model: {{car.car_model}}</h4>
+        <h4>Seats: {{car.seats}}</h4>
+        <h4>REG: {{car.reg_numb}}</h4>
+      </div>
+        {%endfor%}
+      {%endif%}
+    </div>
+  </div> <br>
+  <div class="container">
+  <a href="/car/new"><button type="button" class="btn btn-primary"name="button">Add vehicle</button></a>
+  <a href="/car/update"><button type="button" class="btn btn-primary"name="button">Update vehicle</button></a>
+
+  </div>
+{%endblock%}
